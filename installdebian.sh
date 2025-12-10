@@ -100,17 +100,18 @@ fi
 # ============================================
 log_section "4/7 - Personnalisation du BASH"
 log_info "Décommentage des lignes 9-13 dans /root/.bashrc..."
-
+ 
 cp /root/.bashrc /root/.bashrc.backup
-
-# Décommenter les lignes de force_color_prompt et ls aliases (généralement lignes 9-13)
-sed -i '47,59s/^#//' /root/.bashrc 2>/dev/null || true
-sed -i '/force_color_prompt=yes/s/^# //' /root/.bashrc
+ 
+# Décommenter les lignes de force_color_prompt et ls aliases
+sed -i '/export LS_OPTIONS=/s/^# //' /root/.bashrc
+sed -i '/eval.*dircolors/s/^# //' /root/.bashrc
+sed -i '/alias ls=/s/^# //' /root/.bashrc
 sed -i '/alias ll=/s/^# //' /root/.bashrc
-sed -i '/alias la=/s/^# //' /root/.bashrc
 sed -i '/alias l=/s/^# //' /root/.bashrc
-
+ 
 log_info "BASH personnalisé (source /root/.bashrc pour appliquer les changements)"
+ 
 
 # ============================================
 # 6. Installation de WebMin
