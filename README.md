@@ -1,8 +1,8 @@
-## How ton install
+## Installation
 apt install git
 git clone https://github.com/TonyCherasse/installdebian.git
 
-## How to run 
+## Pour le lancer 
 cd installdebian/
 chmod +x installdebian.sh
 ./installdebian.sh
